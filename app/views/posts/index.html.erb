@@ -1,0 +1,24 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <h5 class="my-0 mr-md-auto font-weight-normal">Art of Photography</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark"><%= link_to "Home", home_path %></a>
+        <a class="p-2 text-dark"><%= link_to "Post Photo", new_post_path %></a>
+        
+    </nav>
+    </div>
+
+<h1>Your Posts</h1>
+<% @posts.each do |post| %>
+<div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal"><%= post.title %></h4>
+          </div>
+          <div class="card-body">
+            <p><%= post.body %></p>
+            <%= link_to "Read More", post_path(post), :class => 'btn btn-primary' %>
+          </div>
+        </div>
+    </div>
+
+<% end %>
